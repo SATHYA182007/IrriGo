@@ -101,7 +101,7 @@ export const AdminLayout: React.FC = () => {
                 <div className="font-bold text-slate-900 truncate">{user?.name || 'Anand Sharma'}</div>
                 <div className="text-[9px] text-emerald-700 font-semibold">FPO Lead</div>
               </div>
-              <button onClick={logout} className="p-1 text-slate-400 hover:text-rose-600" title="Sign Out">
+              <button onClick={logout} className="p-1 text-slate-400 hover:text-emerald-800" title="Sign Out">
                 <LogOut className="w-3.5 h-3.5" />
               </button>
             </div>

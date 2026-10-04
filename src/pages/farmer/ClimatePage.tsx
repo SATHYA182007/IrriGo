@@ -19,10 +19,10 @@ export const ClimatePage: React.FC = () => {
 
       {/* Climate Risk Action Cards (project_data.md Section 24) */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <GlassCard variant="amber" className="space-y-2.5">
+        <GlassCard variant="emerald" className="space-y-2.5">
           <div className="flex items-center justify-between">
-            <Flame className="w-5 h-5 text-amber-600" />
-            <span className="text-[10px] font-black uppercase bg-amber-200 text-amber-900 px-2.5 py-0.5 rounded-full">
+            <Flame className="w-5 h-5 text-emerald-600" />
+            <span className="text-[10px] font-black uppercase bg-emerald-100 text-emerald-900 px-2.5 py-0.5 rounded-full border border-emerald-200">
               Medium Risk
             </span>
           </div>
@@ -32,10 +32,10 @@ export const ClimatePage: React.FC = () => {
           </p>
         </GlassCard>
 
-        <GlassCard variant="blue" className="space-y-2.5">
+        <GlassCard variant="emerald" className="space-y-2.5">
           <div className="flex items-center justify-between">
-            <CloudRain className="w-5 h-5 text-sky-600" />
-            <span className="text-[10px] font-black uppercase bg-sky-200 text-sky-900 px-2.5 py-0.5 rounded-full">
+            <CloudRain className="w-5 h-5 text-emerald-600" />
+            <span className="text-[10px] font-black uppercase bg-emerald-100 text-emerald-900 px-2.5 py-0.5 rounded-full border border-emerald-200">
               High Risk (80%)
             </span>
           </div>
@@ -48,7 +48,7 @@ export const ClimatePage: React.FC = () => {
         <GlassCard variant="subtle" className="space-y-2.5">
           <div className="flex items-center justify-between">
             <Droplets className="w-5 h-5 text-teal-600" />
-            <span className="text-[10px] font-black uppercase bg-amber-100 text-amber-900 px-2.5 py-0.5 rounded-full">
+            <span className="text-[10px] font-black uppercase bg-emerald-100 text-emerald-900 px-2.5 py-0.5 rounded-full border border-emerald-200">
               Medium Risk
             </span>
           </div>
@@ -61,7 +61,7 @@ export const ClimatePage: React.FC = () => {
         <GlassCard variant="emerald" className="space-y-2.5">
           <div className="flex items-center justify-between">
             <ShieldCheck className="w-5 h-5 text-emerald-600" />
-            <span className="text-[10px] font-black uppercase bg-emerald-100 text-emerald-900 px-2.5 py-0.5 rounded-full">
+            <span className="text-[10px] font-black uppercase bg-emerald-100 text-emerald-900 px-2.5 py-0.5 rounded-full border border-emerald-200">
               Low Risk
             </span>
           </div>
@@ -87,13 +87,13 @@ export const ClimatePage: React.FC = () => {
               }`}
             >
               <span className="text-xs font-bold text-slate-500 block">{f.day}</span>
-              {f.condition === 'sunny' && <Sun className="w-6 h-6 text-amber-500 mx-auto" />}
+              {f.condition === 'sunny' && <Sun className="w-6 h-6 text-emerald-600 mx-auto" />}
               {f.condition === 'cloudy' && <Sun className="w-6 h-6 text-slate-400 mx-auto" />}
-              {f.condition === 'rainy' && <CloudRain className="w-6 h-6 text-sky-600 mx-auto" />}
-              {f.condition === 'partly-cloudy' && <Sun className="w-6 h-6 text-amber-400 mx-auto" />}
+              {f.condition === 'rainy' && <CloudRain className="w-6 h-6 text-emerald-600 mx-auto" />}
+              {f.condition === 'partly-cloudy' && <Sun className="w-6 h-6 text-emerald-600 mx-auto" />}
               <div className="text-sm font-extrabold text-slate-900">{f.tempHigh}°C</div>
               <div className="text-[11px] text-slate-400">{f.tempLow}°C</div>
-              <div className="text-[10px] text-sky-600 font-bold">Rain {f.rainProb}%</div>
+              <div className="text-[10px] text-emerald-700 font-bold">Rain {f.rainProb}%</div>
             </div>
           ))}
         </div>

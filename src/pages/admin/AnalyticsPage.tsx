@@ -28,7 +28,7 @@ export const AnalyticsPage: React.FC = () => {
 
         <GlassCard className="p-4 space-y-1">
           <span className="text-xs font-bold text-slate-500 uppercase">Solar Utilization</span>
-          <div className="text-2xl font-black text-amber-600">↑ 27%</div>
+          <div className="text-2xl font-black text-emerald-700">↑ 27%</div>
           <span className="text-[10px] text-slate-500">Solar window alignment</span>
         </GlassCard>
 
@@ -46,7 +46,7 @@ export const AnalyticsPage: React.FC = () => {
       </div>
 
       {/* Mandatory Disclaimer Badge (project_data.md Section 31 & 52) */}
-      <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-center text-xs font-bold text-amber-900">
+      <div className="p-3 bg-emerald-50 border border-emerald-200 rounded-xl text-center text-xs font-bold text-emerald-900">
         Illustrative simulation — not field-validated results
       </div>
 
@@ -55,7 +55,7 @@ export const AnalyticsPage: React.FC = () => {
         <GlassCard className="p-6 space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
-              <Droplets className="w-4 h-4 text-sky-600" />
+              <Droplets className="w-4 h-4 text-emerald-600" />
               <span>Water Consumption Trend (kL)</span>
             </h3>
             <span className="text-xs font-bold text-emerald-700">-18% vs Baseline</span>
@@ -65,7 +65,7 @@ export const AnalyticsPage: React.FC = () => {
             {[45, 42, 38, 30, 28, 24, 22].map((val, idx) => (
               <div key={idx} className="flex-1 flex flex-col items-center gap-1">
                 <div
-                  className="w-full bg-sky-500 rounded-t-lg transition-all hover:bg-sky-600"
+                  className="w-full bg-emerald-600 rounded-t-lg transition-all hover:bg-emerald-700"
                   style={{ height: `${val * 3}px` }}
                 />
                 <span className="text-[10px] text-slate-400">W{idx + 1}</span>
@@ -78,17 +78,17 @@ export const AnalyticsPage: React.FC = () => {
         <GlassCard className="p-6 space-y-4">
           <div className="flex items-center justify-between">
             <h3 className="font-bold text-slate-900 text-sm flex items-center gap-2">
-              <Sun className="w-4 h-4 text-amber-500" />
+              <Sun className="w-4 h-4 text-emerald-600" />
               <span>Solar Energy Utilization (%)</span>
             </h3>
-            <span className="text-xs font-bold text-amber-700">+27% Solar Window Sync</span>
+            <span className="text-xs font-bold text-emerald-700">+27% Solar Window Sync</span>
           </div>
 
           <div className="h-44 flex items-end gap-3 pt-6 pb-2 px-2 border-b border-slate-200">
             {[60, 68, 72, 80, 84, 88, 85].map((val, idx) => (
               <div key={idx} className="flex-1 flex flex-col items-center gap-1">
                 <div
-                  className="w-full bg-amber-500 rounded-t-lg transition-all hover:bg-amber-600"
+                  className="w-full bg-emerald-500 rounded-t-lg transition-all hover:bg-emerald-600"
                   style={{ height: `${val * 1.8}px` }}
                 />
                 <span className="text-[10px] text-slate-400">W{idx + 1}</span>

@@ -57,7 +57,7 @@ export const CropHealthPage: React.FC = () => {
                     className={`text-[10px] font-black px-2.5 py-0.5 rounded-full ${
                       field.healthStatus === 'healthy'
                         ? 'bg-emerald-100 text-emerald-800'
-                        : 'bg-amber-100 text-amber-800'
+                        : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                     }`}
                   >
                     {field.healthStatus === 'healthy' ? 'Healthy' : 'Monitor'}

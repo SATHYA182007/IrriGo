@@ -12,8 +12,8 @@ export const AlertsPage: React.FC = () => {
       />
 
       <div className="space-y-3">
-        <GlassCard className="p-5 border-l-4 border-l-amber-500 bg-amber-50/40 flex items-start gap-3">
-          <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+        <GlassCard className="p-5 border-l-4 border-l-emerald-600 bg-emerald-50/40 flex items-start gap-3">
+          <AlertTriangle className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
           <div>
             <div className="flex justify-between items-center gap-2">
               <h4 className="font-bold text-slate-900 text-sm">Rooftop Solar Inverter Sync Interrupted</h4>
@@ -25,8 +25,8 @@ export const AlertsPage: React.FC = () => {
           </div>
         </GlassCard>
 
-        <GlassCard className="p-5 border-l-4 border-l-rose-500 bg-rose-50/40 flex items-start gap-3">
-          <ShieldAlert className="w-5 h-5 text-rose-600 shrink-0 mt-0.5" />
+        <GlassCard className="p-5 border-l-4 border-l-emerald-700 bg-emerald-100/30 flex items-start gap-3">
+          <ShieldAlert className="w-5 h-5 text-emerald-800 shrink-0 mt-0.5" />
           <div>
             <div className="flex justify-between items-center gap-2">
               <h4 className="font-bold text-slate-900 text-sm">Low Water Tension Warning</h4>

@@ -34,7 +34,7 @@ export const WaterPage: React.FC = () => {
 
       {/* Main Flagship Card: "Should I irrigate?" */}
       <GlassCard
-        variant={isIrrigateYes ? 'emerald' : 'amber'}
+        variant="emerald"
         className="p-8 space-y-6 border-2"
       >
         <div className="flex flex-wrap items-center justify-between gap-4">
@@ -52,7 +52,7 @@ export const WaterPage: React.FC = () => {
               className={`text-2xl font-black px-6 py-2 rounded-2xl shadow-md border ${
                 isIrrigateYes
                   ? 'bg-emerald-600 text-white border-emerald-500'
-                  : 'bg-amber-500 text-white border-amber-400'
+                  : 'bg-emerald-800 text-white border-emerald-700'
               }`}
             >
               {isIrrigateYes ? 'YES' : 'NO'}
@@ -142,7 +142,7 @@ export const WaterPage: React.FC = () => {
             <h3 className="text-lg font-bold text-slate-900">Baseline Water Consumption Comparison</h3>
             <p className="text-xs text-slate-500">Conventional fixed scheduling vs. IrriGo soil-aware drip intelligence</p>
           </div>
-          <span className="text-[10px] font-bold px-3 py-1 bg-amber-50 text-amber-900 border border-amber-200 rounded-full">
+          <span className="text-[10px] font-bold px-3 py-1 bg-emerald-50 text-emerald-900 border border-emerald-200 rounded-full">
             Illustrative simulation — not field-validated results
           </span>
         </div>
@@ -181,10 +181,10 @@ export const WaterPage: React.FC = () => {
 
         <GlassCard className="space-y-2">
           <span className="text-xs font-bold text-slate-500 uppercase">Water Tank Capacity</span>
-          <div className="text-3xl font-black text-sky-700">{sensorData.waterTankLevel}%</div>
+          <div className="text-3xl font-black text-emerald-700">{sensorData.waterTankLevel}%</div>
           <p className="text-xs text-slate-600">3,400L Available Reserve</p>
           <div className="w-full bg-slate-100 rounded-full h-2 mt-2">
-            <div className="bg-sky-600 h-2 rounded-full" style={{ width: `${sensorData.waterTankLevel}%` }} />
+            <div className="bg-emerald-600 h-2 rounded-full" style={{ width: `${sensorData.waterTankLevel}%` }} />
           </div>
         </GlassCard>
 

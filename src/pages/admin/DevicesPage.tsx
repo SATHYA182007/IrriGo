@@ -40,7 +40,7 @@ export const DevicesPage: React.FC = () => {
               <div className="p-2 bg-slate-50 rounded-xl">
                 <span className="text-[10px] text-slate-400 block">Signal Strength</span>
                 <span className="font-bold text-slate-800 flex items-center gap-1">
-                  <Wifi className="w-3.5 h-3.5 text-sky-600" /> {device.signalStrength}
+                  <Wifi className="w-3.5 h-3.5 text-emerald-600" /> {device.signalStrength}
                 </span>
               </div>
             </div>

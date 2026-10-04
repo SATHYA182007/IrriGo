@@ -76,7 +76,7 @@ export const ProfilePage: React.FC = () => {
             <button
               onClick={toggleOffline}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-colors cursor-pointer ${
-                isOffline ? 'bg-amber-500 text-white' : 'bg-emerald-100 text-emerald-800'
+                isOffline ? 'bg-emerald-800 text-white' : 'bg-emerald-100 text-emerald-800'
               }`}
             >
               {isOffline ? <WifiOff className="w-4 h-4" /> : <Wifi className="w-4 h-4" />}
@@ -100,7 +100,7 @@ export const ProfilePage: React.FC = () => {
         <div className="pt-4 flex justify-end">
           <button
             onClick={logout}
-            className="flex items-center gap-2 bg-rose-50 hover:bg-rose-100 text-rose-700 px-5 py-2.5 rounded-full text-xs font-bold transition-colors cursor-pointer border border-rose-200"
+            className="flex items-center gap-2 bg-emerald-50 hover:bg-emerald-100 text-emerald-900 px-5 py-2.5 rounded-full text-xs font-bold transition-colors cursor-pointer border border-emerald-200"
           >
             <LogOut className="w-4 h-4" />
             <span>Sign Out</span>

@@ -16,11 +16,11 @@ export const NotificationDrawer: React.FC<NotificationDrawerProps> = ({ isOpen, 
   const getIcon = (type: string) => {
     switch (type) {
       case 'water':
-        return <Droplets className="w-4 h-4 text-sky-600" />;
+        return <Droplets className="w-4 h-4 text-emerald-600" />;
       case 'energy':
-        return <Sun className="w-4 h-4 text-amber-500" />;
+        return <Sun className="w-4 h-4 text-emerald-600" />;
       case 'climate':
-        return <Thermometer className="w-4 h-4 text-rose-500" />;
+        return <Thermometer className="w-4 h-4 text-emerald-600" />;
       case 'crop':
         return <Sprout className="w-4 h-4 text-emerald-600" />;
       default:

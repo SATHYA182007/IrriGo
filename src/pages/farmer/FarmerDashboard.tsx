@@ -66,7 +66,7 @@ export const FarmerDashboard: React.FC = () => {
       <motion.div variants={fadeUp} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Water Status Card */}
         <StatusCard
-          icon={<Droplets className="w-4 h-4 text-sky-600" />}
+          icon={<Droplets className="w-4 h-4 text-emerald-600" />}
           title={t.waterStatusLabel}
           statusText={sensorData.soilMoisture < 35 ? "Soil is getting dry" : "Soil moisture good"}
           badgeText={sensorData.soilMoisture < 35 ? "Action Needed" : "Optimal"}
@@ -82,7 +82,7 @@ export const FarmerDashboard: React.FC = () => {
 
         {/* Energy Status Card */}
         <StatusCard
-          icon={<Sun className="w-4 h-4 text-amber-500" />}
+          icon={<Sun className="w-4 h-4 text-emerald-600" />}
           title={t.energyStatusLabel}
           statusText="Good solar energy available"
           badgeText="Free Power"
@@ -116,7 +116,7 @@ export const FarmerDashboard: React.FC = () => {
 
         {/* Weather Forecast Card */}
         <StatusCard
-          icon={<CloudRain className="w-4 h-4 text-sky-600" />}
+          icon={<CloudRain className="w-4 h-4 text-emerald-600" />}
           title={t.weatherStatusLabel}
           statusText="Rain unlikely today"
           badgeText="Sunny 34°C"
@@ -154,7 +154,7 @@ export const FarmerDashboard: React.FC = () => {
               <div className="flex justify-between items-center">
                 <span className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">{field.name}</span>
                 <span className={`text-[10px] font-black px-2.5 py-0.5 rounded-full ${
-                  field.healthStatus === 'healthy' ? 'bg-emerald-100 text-emerald-900' : 'bg-amber-100 text-amber-900'
+                  field.healthStatus === 'healthy' ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                 }`}>
                   {field.healthStatus === 'healthy' ? 'Healthy' : 'Monitor'}
                 </span>

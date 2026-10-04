@@ -28,25 +28,25 @@ export const AboutPage: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           <GlassCard className="space-y-3">
-            <div className="p-3 bg-sky-100 text-sky-700 rounded-xl w-fit font-bold">1. Sense</div>
+            <div className="p-3 bg-emerald-100 text-emerald-900 rounded-xl w-fit font-bold border border-emerald-200">1. Sense</div>
             <h4 className="font-bold text-slate-800">IoT Telemetry</h4>
             <p className="text-xs text-slate-600">ESP32 soil moisture nodes, ultrasonic tank gauges, and rooftop solar inverter telemetry.</p>
           </GlassCard>
 
           <GlassCard className="space-y-3">
-            <div className="p-3 bg-indigo-100 text-indigo-700 rounded-xl w-fit font-bold">2. Sync</div>
+            <div className="p-3 bg-teal-100 text-teal-950 rounded-xl w-fit font-bold border border-teal-200">2. Sync</div>
             <h4 className="font-bold text-slate-800">Weather & Satellite</h4>
             <p className="text-xs text-slate-600">Hyper-local precipitation radar and Sentinel-2 NDVI satellite crop vigor feeds.</p>
           </GlassCard>
 
           <GlassCard className="space-y-3">
-            <div className="p-3 bg-emerald-100 text-emerald-700 rounded-xl w-fit font-bold">3. Synthesize</div>
+            <div className="p-3 bg-emerald-100 text-emerald-900 rounded-xl w-fit font-bold border border-emerald-300">3. Synthesize</div>
             <h4 className="font-bold text-slate-800">AgriPulse Engine</h4>
             <p className="text-xs text-slate-600">Deterministic agronomic rule evaluation evaluating water need against peak solar hours.</p>
           </GlassCard>
 
           <GlassCard className="space-y-3">
-            <div className="p-3 bg-amber-100 text-amber-700 rounded-xl w-fit font-bold">4. Empower</div>
+            <div className="p-3 bg-emerald-50 text-emerald-900 rounded-xl w-fit font-bold border border-emerald-200">4. Empower</div>
             <h4 className="font-bold text-slate-800">Farmer Decision</h4>
             <p className="text-xs text-slate-600">Actionable vernacular notification & manual or automated pump control.</p>
           </GlassCard>

@@ -97,7 +97,7 @@ export const FarmerLayout: React.FC = () => {
                     </div>
 
                     {item.badge && item.badge > 0 ? (
-                      <span className="bg-rose-500 text-white text-[9px] font-black px-1.5 py-0.2 rounded-full">
+                      <span className="bg-emerald-700 text-white text-[9px] font-black px-1.5 py-0.2 rounded-full">
                         {item.badge}
                       </span>
                     ) : null}
@@ -130,7 +130,7 @@ export const FarmerLayout: React.FC = () => {
 
               <button
                 onClick={logout}
-                className="p-1 text-slate-400 hover:text-rose-600 rounded-lg hover:bg-rose-50 transition-colors cursor-pointer"
+                className="p-1 text-slate-400 hover:text-emerald-800 rounded-lg hover:bg-emerald-100/60 transition-colors cursor-pointer"
                 title="Sign Out"
               >
                 <LogOut className="w-3.5 h-3.5" />
@@ -165,7 +165,7 @@ export const FarmerLayout: React.FC = () => {
               >
                 <Bell className="w-4 h-4" />
                 {unreadCount > 0 && (
-                  <span className="absolute -top-1 -right-1 bg-rose-500 text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
+                  <span className="absolute -top-1 -right-1 bg-emerald-700 text-white text-[9px] font-bold w-3.5 h-3.5 rounded-full flex items-center justify-center">
                     {unreadCount}
                   </span>
                 )}
@@ -242,7 +242,7 @@ export const FarmerLayout: React.FC = () => {
                     logout();
                     setSidebarOpen(false);
                   }}
-                  className="w-full py-2 bg-rose-50 text-rose-700 border border-rose-200 rounded-xl font-bold text-xs flex items-center justify-center gap-2"
+                  className="w-full py-2 bg-emerald-50 text-emerald-900 border border-emerald-200 rounded-xl font-bold text-xs flex items-center justify-center gap-2"
                 >
                   <LogOut className="w-4 h-4" />
                   <span>Sign Out</span>

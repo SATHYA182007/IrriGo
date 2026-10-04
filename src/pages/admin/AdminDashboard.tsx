@@ -46,20 +46,20 @@ export const AdminDashboard: React.FC = () => {
 
         <GlassCard className="p-4 space-y-1">
           <span className="text-[10px] font-bold text-slate-500 uppercase">Water Saved</span>
-          <div className="text-2xl font-black text-sky-700">42.8 kL</div>
-          <span className="text-[10px] text-sky-600 font-bold">This Month</span>
+          <div className="text-2xl font-black text-emerald-700">42.8 kL</div>
+          <span className="text-[10px] text-emerald-600 font-bold">This Month</span>
         </GlassCard>
 
         <GlassCard className="p-4 space-y-1">
           <span className="text-[10px] font-bold text-slate-500 uppercase">Solar Offset</span>
-          <div className="text-2xl font-black text-amber-600">84.2%</div>
-          <span className="text-[10px] text-amber-600 font-bold">Pumping Clean Energy</span>
+          <div className="text-2xl font-black text-emerald-700">84.2%</div>
+          <span className="text-[10px] text-emerald-600 font-bold">Pumping Clean Energy</span>
         </GlassCard>
 
         <GlassCard className="p-4 space-y-1">
           <span className="text-[10px] font-bold text-slate-500 uppercase">Active Alerts</span>
-          <div className="text-2xl font-black text-rose-600">2</div>
-          <span className="text-[10px] text-rose-600 font-bold">Requires Action</span>
+          <div className="text-2xl font-black text-emerald-800">2</div>
+          <span className="text-[10px] text-emerald-700 font-bold">Requires Action</span>
         </GlassCard>
       </div>
 
@@ -123,14 +123,14 @@ export const AdminDashboard: React.FC = () => {
                   <td className="py-3.5 px-4">{row.energy}</td>
                   <td className="py-3.5 px-4">
                     <span className={`px-2.5 py-0.5 rounded-full font-bold text-[10px] ${
-                      row.cropHealth === 'Healthy' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'
+                      row.cropHealth === 'Healthy' ? 'bg-emerald-100 text-emerald-800' : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
                     }`}>
                       {row.cropHealth}
                     </span>
                   </td>
                   <td className="py-3.5 px-4">
                     <span className={`px-2.5 py-0.5 rounded-full font-bold text-[10px] ${
-                      row.alert === 'None' ? 'bg-slate-100 text-slate-600' : 'bg-rose-100 text-rose-800'
+                      row.alert === 'None' ? 'bg-slate-100 text-slate-600' : 'bg-emerald-100 text-emerald-900 border border-emerald-300'
                     }`}>
                       {row.alert}
                     </span>

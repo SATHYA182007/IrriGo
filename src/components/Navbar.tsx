@@ -92,7 +92,7 @@ export const Navbar: React.FC = () => {
               </Link>
               <button
                 onClick={logout}
-                className="p-2 rounded-full text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition-colors cursor-pointer"
+                className="p-2 rounded-full text-slate-400 hover:text-emerald-800 hover:bg-emerald-50 transition-colors cursor-pointer"
                 title="Sign Out"
               >
                 <LogOut className="w-4 h-4" />

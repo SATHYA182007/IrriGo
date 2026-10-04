@@ -189,7 +189,7 @@ export const LandingPage: React.FC = () => {
                     <div className="p-3 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-100">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-900 border border-rose-200">
+                    <span className="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-200">
                       {card.badge}
                     </span>
                   </div>
@@ -281,7 +281,7 @@ export const LandingPage: React.FC = () => {
           {/* Pillar 1: Smart Water */}
           <motion.div variants={fadeUp}>
             <GlassCard className="p-8 space-y-4 bg-white border border-emerald-100 shadow-2xs hover:-translate-y-1 transition-transform">
-              <div className="w-11 h-11 rounded-xl bg-sky-100 text-sky-800 flex items-center justify-center font-bold">
+              <div className="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
                 <Droplets className="w-5 h-5" />
               </div>
               <div>
@@ -303,7 +303,7 @@ export const LandingPage: React.FC = () => {
           {/* Pillar 2: Smart Energy */}
           <motion.div variants={fadeUp}>
             <GlassCard className="p-8 space-y-4 bg-white border border-emerald-100 shadow-2xs hover:-translate-y-1 transition-transform">
-              <div className="w-11 h-11 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+              <div className="w-11 h-11 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold">
                 <Sun className="w-5 h-5" />
               </div>
               <div>
@@ -347,7 +347,7 @@ export const LandingPage: React.FC = () => {
           {/* Pillar 4: AgriVault */}
           <motion.div variants={fadeUp}>
             <GlassCard className="p-8 space-y-4 bg-white border border-emerald-100 shadow-2xs hover:-translate-y-1 transition-transform">
-              <div className="w-11 h-11 rounded-xl bg-indigo-100 text-indigo-800 flex items-center justify-center font-bold">
+              <div className="w-11 h-11 rounded-xl bg-teal-100 text-teal-800 flex items-center justify-center font-bold">
                 <Package className="w-5 h-5" />
               </div>
               <div>
@@ -393,8 +393,8 @@ export const LandingPage: React.FC = () => {
               <p className="text-[11px] text-slate-400">Reduced freshwater extraction per acre</p>
             </div>
 
-            <div className="border-l-2 border-amber-500 pl-4 space-y-1">
-              <span className="text-3xl sm:text-4xl font-black text-amber-400">35%</span>
+            <div className="border-l-2 border-emerald-400 pl-4 space-y-1">
+              <span className="text-3xl sm:text-4xl font-black text-emerald-400">35%</span>
               <p className="text-xs font-bold text-slate-300 uppercase">Energy Optimized</p>
               <p className="text-[11px] text-slate-400">Pumping powered by free solar hours</p>
             </div>
@@ -405,8 +405,8 @@ export const LandingPage: React.FC = () => {
               <p className="text-[11px] text-slate-400">Prevention of severe water stress</p>
             </div>
 
-            <div className="border-l-2 border-indigo-500 pl-4 space-y-1">
-              <span className="text-3xl sm:text-4xl font-black text-indigo-400">25%</span>
+            <div className="border-l-2 border-teal-400 pl-4 space-y-1">
+              <span className="text-3xl sm:text-4xl font-black text-teal-400">25%</span>
               <p className="text-xs font-bold text-slate-300 uppercase">Loss Reduced</p>
               <p className="text-[11px] text-slate-400">Preserved post-harvest shelf life</p>
             </div>

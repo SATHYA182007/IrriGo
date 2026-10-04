@@ -126,7 +126,7 @@ export const AssistantPage: React.FC = () => {
           <button
             onClick={toggleMicMock}
             className={`p-3 rounded-full text-white transition-all cursor-pointer ${
-              isListening ? 'bg-rose-600 animate-pulse' : 'bg-emerald-700 hover:bg-emerald-800'
+              isListening ? 'bg-emerald-950 animate-pulse border border-emerald-400' : 'bg-emerald-700 hover:bg-emerald-800'
             }`}
             title="Speak in English, Tamil, or Hindi"
           >

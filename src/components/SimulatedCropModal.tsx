@@ -127,19 +127,19 @@ export const SimulatedCropModal: React.FC<SimulatedCropModalProps> = ({ isOpen, 
                 </div>
               )}
 
-              <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2">
-                <div className="flex items-center gap-2 text-amber-800 font-bold text-sm">
-                  <AlertTriangle className="w-4 h-4 text-amber-600" />
+              <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2">
+                <div className="flex items-center gap-2 text-emerald-950 font-bold text-sm">
+                  <AlertTriangle className="w-4 h-4 text-emerald-700" />
                   <span>Early Water Stress Detected</span>
                 </div>
-                <p className="text-xs text-amber-900 leading-relaxed">
+                <p className="text-xs text-slate-700 leading-relaxed">
                   Leaves display initial signs of moisture deficit in lower canopy stomata. Recommended to check Field A drip irrigation line pressure.
                 </p>
               </div>
 
               {/* Disclaimer Notice */}
               <div className="p-3 rounded-xl bg-slate-100 border border-slate-200 text-[11px] text-slate-500 font-medium text-center">
-                ⚠️ Prototype AI analysis — not an official agricultural diagnosis.
+                Prototype AI analysis — not an official agricultural diagnosis.
               </div>
             </div>
           )}

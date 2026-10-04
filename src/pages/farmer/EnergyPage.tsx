@@ -19,12 +19,12 @@ export const EnergyPage: React.FC = () => {
       />
 
       {/* Main Solar Window AI Recommendation Banner */}
-      <GlassCard variant="amber" className="p-8 space-y-4 border-2 border-amber-300">
+      <GlassCard variant="emerald" className="p-8 space-y-4 border-2 border-emerald-300">
         <div className="flex items-center gap-2">
-          <div className="p-2 bg-amber-500 text-white rounded-xl shadow-xs">
+          <div className="p-2 bg-emerald-700 text-white rounded-xl shadow-xs">
             <Sparkles className="w-5 h-5" />
           </div>
-          <span className="text-xs font-bold uppercase tracking-wider text-amber-900">
+          <span className="text-xs font-bold uppercase tracking-wider text-emerald-950">
             Optimal Solar Pumping Window
           </span>
         </div>
@@ -37,11 +37,11 @@ export const EnergyPage: React.FC = () => {
           Running your 1.5HP water pump between 10:00 AM and 12:00 PM utilizes direct rooftop solar generation without drawing battery storage or paid grid power.
         </p>
 
-        <div className="pt-2 flex flex-wrap gap-4 text-xs font-bold text-amber-900">
-          <span className="bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+        <div className="pt-2 flex flex-wrap gap-4 text-xs font-bold text-emerald-900">
+          <span className="bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300">
             Current Irradiance: 812 W/m² (High)
           </span>
-          <span className="bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+          <span className="bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300">
             Est. Daily Fuel Savings: ₹145
           </span>
         </div>
@@ -53,10 +53,10 @@ export const EnergyPage: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 items-center justify-between text-center">
           {/* Node 1: Solar */}
-          <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 space-y-2">
-            <Sun className="w-8 h-8 text-amber-500 mx-auto" />
+          <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2">
+            <Sun className="w-8 h-8 text-emerald-600 mx-auto" />
             <span className="text-xs font-bold text-slate-800 block">{t.solarPower}</span>
-            <span className="text-lg font-black text-amber-600">{energyData.solarGenerationKW} kW</span>
+            <span className="text-lg font-black text-emerald-700">{energyData.solarGenerationKW} kW</span>
           </div>
 
           <div className="hidden sm:flex justify-center">
@@ -64,10 +64,10 @@ export const EnergyPage: React.FC = () => {
           </div>
 
           {/* Node 2: Battery */}
-          <div className="p-5 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-2">
+          <div className="p-5 rounded-2xl bg-emerald-50/80 border border-emerald-200 space-y-2">
             <Battery className="w-8 h-8 text-emerald-600 mx-auto" />
             <span className="text-xs font-bold text-slate-800 block">{t.batteryLevel}</span>
-            <span className="text-lg font-black text-emerald-600">{energyData.batteryLevelPercent}%</span>
+            <span className="text-lg font-black text-emerald-700">{energyData.batteryLevelPercent}%</span>
           </div>
 
           <div className="hidden sm:flex justify-center">
@@ -75,10 +75,10 @@ export const EnergyPage: React.FC = () => {
           </div>
 
           {/* Node 3: Pump */}
-          <div className="p-5 rounded-2xl bg-sky-50 border border-sky-200 space-y-2">
-            <Droplets className="w-8 h-8 text-sky-600 mx-auto" />
+          <div className="p-5 rounded-2xl bg-teal-50 border border-teal-200 space-y-2">
+            <Droplets className="w-8 h-8 text-teal-600 mx-auto" />
             <span className="text-xs font-bold text-slate-800 block">{t.pumpConsumption}</span>
-            <span className="text-lg font-black text-sky-600">{energyData.pumpConsumptionKW} kW</span>
+            <span className="text-lg font-black text-teal-700">{energyData.pumpConsumptionKW} kW</span>
           </div>
 
           <div className="hidden sm:flex justify-center">
@@ -101,7 +101,7 @@ export const EnergyPage: React.FC = () => {
             <h3 className="text-lg font-bold text-slate-900">Baseline Energy Consumption Comparison</h3>
             <p className="text-xs text-slate-500">Grid/diesel pump operation vs. IrriGo peak solar window scheduling</p>
           </div>
-          <span className="text-[10px] font-bold px-3 py-1 bg-amber-50 text-amber-900 border border-amber-200 rounded-full">
+          <span className="text-[10px] font-bold px-3 py-1 bg-emerald-50 text-emerald-900 border border-emerald-200 rounded-full">
             Illustrative simulation — not field-validated results
           </span>
         </div>
@@ -113,10 +113,10 @@ export const EnergyPage: React.FC = () => {
             <span className="text-[11px] text-slate-500 block">Grid or diesel power pumping</span>
           </div>
 
-          <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 text-center space-y-1">
-            <span className="text-xs font-bold text-amber-800 block uppercase">IrriGo Solar Pumping</span>
-            <span className="text-2xl font-black text-amber-700">2.58 kWh / day</span>
-            <span className="text-[11px] text-amber-700 block">10:30 AM – 12:00 PM solar window</span>
+          <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center space-y-1">
+            <span className="text-xs font-bold text-emerald-800 block uppercase">IrriGo Solar Pumping</span>
+            <span className="text-2xl font-black text-emerald-700">2.58 kWh / day</span>
+            <span className="text-[11px] text-emerald-700 block">10:30 AM – 12:00 PM solar window</span>
           </div>
 
           <div className="p-4 rounded-2xl bg-emerald-100/80 border border-emerald-300 text-center space-y-1">
@@ -131,7 +131,7 @@ export const EnergyPage: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <GlassCard className="space-y-2">
           <span className="text-xs font-bold text-slate-500 uppercase">Daily Solar Harvest</span>
-          <div className="text-3xl font-black text-amber-600">{energyData.dailySolarEnergyKWh} kWh</div>
+          <div className="text-3xl font-black text-emerald-700">{energyData.dailySolarEnergyKWh} kWh</div>
           <p className="text-xs text-slate-600">Peak window: 10:30 AM – 12:00 PM</p>
         </GlassCard>
 

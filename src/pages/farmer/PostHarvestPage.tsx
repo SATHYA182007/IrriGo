@@ -31,15 +31,15 @@ export const PostHarvestPage: React.FC = () => {
           <div className="hidden sm:block text-slate-400">→</div>
 
           <div className="p-4 rounded-2xl bg-white border border-emerald-200 space-y-1">
-            <Package className="w-6 h-6 text-amber-500 mx-auto" />
+            <Package className="w-6 h-6 text-emerald-600 mx-auto" />
             <span className="text-xs font-bold text-slate-800 block">Harvest</span>
-            <span className="text-[10px] text-amber-700 font-bold">82% Ready</span>
+            <span className="text-[10px] text-emerald-700 font-bold">82% Ready</span>
           </div>
 
           <div className="hidden sm:block text-slate-400">→</div>
 
           <div className="p-4 rounded-2xl bg-white border border-emerald-200 space-y-1">
-            <Thermometer className="w-6 h-6 text-sky-600 mx-auto" />
+            <Thermometer className="w-6 h-6 text-emerald-600 mx-auto" />
             <span className="text-xs font-bold text-slate-800 block">Storage</span>
             <span className="text-[10px] text-slate-500">18°C / 72% RH</span>
           </div>
@@ -47,9 +47,9 @@ export const PostHarvestPage: React.FC = () => {
           <div className="hidden sm:block text-slate-400">→</div>
 
           <div className="p-4 rounded-2xl bg-white border border-emerald-200 space-y-1">
-            <Truck className="w-6 h-6 text-indigo-600 mx-auto" />
+            <Truck className="w-6 h-6 text-emerald-700 mx-auto" />
             <span className="text-xs font-bold text-slate-800 block">Transport</span>
-            <span className="text-[10px] text-indigo-700 font-bold">Priority Dispatch</span>
+            <span className="text-[10px] text-emerald-800 font-bold">Priority Dispatch</span>
           </div>
 
           <div className="hidden sm:block text-slate-400">→</div>

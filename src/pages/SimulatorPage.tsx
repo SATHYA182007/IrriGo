@@ -71,13 +71,13 @@ export const SimulatorPage: React.FC = () => {
         <div className="flex flex-wrap items-center gap-2">
           <button
             onClick={() => applyPreset('drought')}
-            className="px-3 py-1.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold hover:bg-amber-200 transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-full bg-emerald-100/90 text-emerald-950 border border-emerald-300 text-xs font-bold hover:bg-emerald-200 transition-colors cursor-pointer"
           >
             Dry Summer (High Solar + Low Moisture)
           </button>
           <button
             onClick={() => applyPreset('monsoon')}
-            className="px-3 py-1.5 rounded-full bg-sky-100 text-sky-900 border border-sky-300 text-xs font-bold hover:bg-sky-200 transition-colors cursor-pointer"
+            className="px-3 py-1.5 rounded-full bg-teal-100 text-teal-950 border border-teal-300 text-xs font-bold hover:bg-teal-200 transition-colors cursor-pointer"
           >
             Heavy Monsoon (85% Rain Forecast)
           </button>
@@ -103,7 +103,7 @@ export const SimulatorPage: React.FC = () => {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs">
                 <span className="font-bold text-slate-700 flex items-center gap-1.5">
-                  <Droplets className="w-4 h-4 text-sky-600" /> {t.soilMoisture}
+                  <Droplets className="w-4 h-4 text-emerald-600" /> {t.soilMoisture}
                 </span>
                 <span className="font-mono font-black text-emerald-700 text-sm">{simulationParams.soilMoisture}%</span>
               </div>
@@ -126,9 +126,9 @@ export const SimulatorPage: React.FC = () => {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs">
                 <span className="font-bold text-slate-700 flex items-center gap-1.5">
-                  <CloudRain className="w-4 h-4 text-indigo-600" /> {t.rainProbability}
+                  <CloudRain className="w-4 h-4 text-emerald-600" /> {t.rainProbability}
                 </span>
-                <span className="font-mono font-black text-indigo-700 text-sm">{simulationParams.rainProbability}%</span>
+                <span className="font-mono font-black text-emerald-700 text-sm">{simulationParams.rainProbability}%</span>
               </div>
               <input
                 type="range"
@@ -136,7 +136,7 @@ export const SimulatorPage: React.FC = () => {
                 max="100"
                 value={simulationParams.rainProbability}
                 onChange={e => updateSimulation({ rainProbability: Number(e.target.value) })}
-                className="w-full accent-indigo-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
+                className="w-full accent-emerald-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-slate-400">
                 <span>Clear Sky (0%)</span>
@@ -149,9 +149,9 @@ export const SimulatorPage: React.FC = () => {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs">
                 <span className="font-bold text-slate-700 flex items-center gap-1.5">
-                  <Sun className="w-4 h-4 text-amber-500" /> {t.solarAvailability}
+                  <Sun className="w-4 h-4 text-emerald-600" /> {t.solarAvailability}
                 </span>
-                <span className="font-mono font-black text-amber-600 text-sm">{simulationParams.solarAvailability}%</span>
+                <span className="font-mono font-black text-emerald-700 text-sm">{simulationParams.solarAvailability}%</span>
               </div>
               <input
                 type="range"
@@ -159,7 +159,7 @@ export const SimulatorPage: React.FC = () => {
                 max="100"
                 value={simulationParams.solarAvailability}
                 onChange={e => updateSimulation({ solarAvailability: Number(e.target.value) })}
-                className="w-full accent-amber-500 h-2 bg-slate-200 rounded-lg cursor-pointer"
+                className="w-full accent-emerald-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
               />
               <div className="flex justify-between text-[10px] text-slate-400">
                 <span>Overcast (10%)</span>
@@ -172,9 +172,9 @@ export const SimulatorPage: React.FC = () => {
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs">
                 <span className="font-bold text-slate-700 flex items-center gap-1.5">
-                  <Thermometer className="w-4 h-4 text-rose-500" /> {t.temperature}
+                  <Thermometer className="w-4 h-4 text-emerald-600" /> {t.temperature}
                 </span>
-                <span className="font-mono font-black text-rose-600 text-sm">{simulationParams.temperature}°C</span>
+                <span className="font-mono font-black text-emerald-700 text-sm">{simulationParams.temperature}°C</span>
               </div>
               <input
                 type="range"
@@ -182,7 +182,7 @@ export const SimulatorPage: React.FC = () => {
                 max="45"
                 value={simulationParams.temperature}
                 onChange={e => updateSimulation({ temperature: Number(e.target.value) })}
-                className="w-full accent-rose-500 h-2 bg-slate-200 rounded-lg cursor-pointer"
+                className="w-full accent-emerald-600 h-2 bg-slate-200 rounded-lg cursor-pointer"
               />
             </div>
 
@@ -234,7 +234,7 @@ export const SimulatorPage: React.FC = () => {
               currentRec.status === 'REQUIRED'
                 ? 'bg-gradient-to-br from-emerald-900 to-emerald-800 border-emerald-700'
                 : currentRec.status === 'POSTPONED'
-                ? 'bg-gradient-to-br from-amber-900 to-amber-800 border-amber-700'
+                ? 'bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950 border-emerald-700'
                 : 'bg-gradient-to-br from-slate-900 to-slate-800 border-slate-700'
             }`}
           >

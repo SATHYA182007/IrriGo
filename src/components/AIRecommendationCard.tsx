@@ -14,10 +14,10 @@ export const AIRecommendationCard: React.FC = () => {
       initial={{ opacity: 0, y: 12 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="rounded-2xl p-6 sm:p-7 bg-gradient-to-br from-emerald-50/90 via-teal-50/40 to-white border border-emerald-300/80 shadow-md relative overflow-hidden text-slate-900"
+      className="rounded-2xl p-6 sm:p-7 bg-gradient-to-br from-emerald-50/80 via-teal-50/20 to-white border border-emerald-200 shadow-md relative overflow-hidden text-slate-900"
     >
       {/* Background Ambient Glow */}
-      <div className="absolute -right-12 -bottom-12 w-64 h-64 bg-emerald-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -right-12 -bottom-12 w-64 h-64 bg-emerald-200/30 rounded-full blur-3xl pointer-events-none" />
 
       {/* Card Header Row */}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
@@ -46,7 +46,7 @@ export const AIRecommendationCard: React.FC = () => {
         </p>
       </div>
 
-      {/* Key Metric Cards */}
+      {/* Key Metric Cards — STRICTLY WHITE & GREEN */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-5">
         <div className="bg-white p-3.5 rounded-xl border border-emerald-200/90 shadow-2xs">
           <div className="flex items-center gap-1.5 text-slate-500 text-[11px] font-extrabold mb-1">
@@ -58,7 +58,7 @@ export const AIRecommendationCard: React.FC = () => {
 
         <div className="bg-white p-3.5 rounded-xl border border-emerald-200/90 shadow-2xs">
           <div className="flex items-center gap-1.5 text-slate-500 text-[11px] font-extrabold mb-1">
-            <Droplets className="w-3.5 h-3.5 text-sky-600" />
+            <Droplets className="w-3.5 h-3.5 text-emerald-600" />
             <span className="uppercase tracking-wider">{t.recWaterAmount}</span>
           </div>
           <p className="text-base font-black text-slate-900">
@@ -68,7 +68,7 @@ export const AIRecommendationCard: React.FC = () => {
 
         <div className="bg-white p-3.5 rounded-xl border border-emerald-200/90 shadow-2xs">
           <div className="flex items-center gap-1.5 text-slate-500 text-[11px] font-extrabold mb-1">
-            <SunMedium className="w-3.5 h-3.5 text-amber-500" />
+            <SunMedium className="w-3.5 h-3.5 text-emerald-600" />
             <span className="uppercase tracking-wider">{t.recEnergySource}</span>
           </div>
           <p className="text-base font-black text-slate-900">{recommendation.energySource}</p>
@@ -109,7 +109,7 @@ export const AIRecommendationCard: React.FC = () => {
           </button>
         </div>
 
-        <div className="text-[11px] text-slate-500 font-bold bg-white/80 px-3 py-1 rounded-full border border-slate-200">
+        <div className="text-[11px] text-slate-500 font-bold bg-white/80 px-3 py-1 rounded-full border border-emerald-200">
           Powered by Soil + Solar + Satellite Sync
         </div>
       </div>
