@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { GlassCard } from './GlassCard';
 import { ChevronDown, ChevronUp, Info, ArrowUpRight } from 'lucide-react';
 
 interface StatusCardProps {
@@ -30,40 +29,40 @@ export const StatusCard: React.FC<StatusCardProps> = ({
   const [showDetails, setShowDetails] = useState(false);
 
   const badgeStyles = {
-    success: 'bg-emerald-100 text-emerald-900 border-emerald-300 font-bold',
-    warning: 'bg-amber-100 text-amber-900 border-amber-300 font-bold',
-    info: 'bg-sky-100 text-sky-900 border-sky-300 font-bold',
-    alert: 'bg-rose-100 text-rose-900 border-rose-300 font-bold'
+    success: 'bg-emerald-100/90 text-emerald-900 border-emerald-300/80 font-bold',
+    warning: 'bg-amber-100/90 text-amber-900 border-amber-300/80 font-bold',
+    info: 'bg-sky-100/90 text-sky-900 border-sky-300/80 font-bold',
+    alert: 'bg-rose-100/90 text-rose-900 border-rose-300/80 font-bold'
   };
 
   return (
-    <GlassCard className="flex flex-col justify-between p-5 border border-emerald-100/90 shadow-2xs hover:border-emerald-200 group bg-white">
-      <div>
+    <div className="flex flex-col justify-between h-full p-5 bg-white/95 rounded-2xl border border-emerald-100/90 shadow-2xs hover:shadow-md hover:border-emerald-200 transition-all group">
+      <div className="space-y-3">
         {/* Card Top Header */}
-        <div className="flex items-center justify-between gap-2 mb-2.5">
+        <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-2.5">
           <div className="flex items-center gap-2">
-            <div className="p-2 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-100 group-hover:bg-emerald-100/80 transition-colors">
+            <div className="p-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-100 group-hover:bg-emerald-100/80 transition-colors">
               {icon}
             </div>
-            <span className="text-[11px] font-extrabold uppercase tracking-wider text-slate-500">
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-500">
               {title}
             </span>
           </div>
 
           {badgeText && (
-            <span className={`text-[10px] px-2 py-0.5 rounded-full border ${badgeStyles[badgeVariant]}`}>
+            <span className={`text-[10px] px-2.5 py-0.5 rounded-full border ${badgeStyles[badgeVariant]}`}>
               {badgeText}
             </span>
           )}
         </div>
 
-        {/* Actionable Status Text (Farmer First - NO EMOJIS) */}
-        <div className="my-2 space-y-1">
-          <h3 className="text-base font-extrabold text-slate-900 leading-snug">
+        {/* Actionable Status Text */}
+        <div className="space-y-1">
+          <h3 className="text-base font-extrabold text-slate-900 leading-tight">
             {statusText}
           </h3>
           {detailMetric && (
-            <div className="mt-1 flex items-baseline gap-1.5">
+            <div className="pt-1 flex items-baseline gap-1.5">
               <span className="text-2xl font-black text-slate-900 tracking-tight">{detailMetric}</span>
               {detailLabel && <span className="text-xs font-semibold text-slate-500">{detailLabel}</span>}
             </div>
@@ -71,8 +70,8 @@ export const StatusCard: React.FC<StatusCardProps> = ({
         </div>
       </div>
 
-      {/* Expandable Technical Details & Action Buttons */}
-      <div className="mt-3 pt-2.5 border-t border-slate-100">
+      {/* Footer Action Bar */}
+      <div className="mt-4 pt-2.5 border-t border-slate-100">
         <div className="flex items-center justify-between gap-2">
           {technicalDetails && technicalDetails.length > 0 ? (
             <button
@@ -107,6 +106,6 @@ export const StatusCard: React.FC<StatusCardProps> = ({
           </div>
         )}
       </div>
-    </GlassCard>
+    </div>
   );
 };
