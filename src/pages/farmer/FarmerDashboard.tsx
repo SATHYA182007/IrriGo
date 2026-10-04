@@ -6,6 +6,7 @@ import { AIRecommendationCard } from '../../components/AIRecommendationCard';
 import { StatusCard } from '../../components/StatusCard';
 import { GlassCard } from '../../components/GlassCard';
 import { SimulatedCropModal } from '../../components/SimulatedCropModal';
+import { RealtimeLocationBadge } from '../../components/RealtimeLocationBadge';
 import {
   Droplets,
   Sun,
@@ -38,9 +39,7 @@ export const FarmerDashboard: React.FC = () => {
             <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-900 bg-emerald-100/90 px-3 py-0.5 rounded-full border border-emerald-200">
               {t.whatToDoToday}
             </span>
-            <span className="text-xs font-bold text-slate-500 flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-emerald-600" /> Salem, Tamil Nadu • 2.4 Acres
-            </span>
+            <RealtimeLocationBadge farmSize={user?.farmSize || '2.4 Acres'} />
           </div>
           <h1 className="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
             {t.farmerGreeting}
