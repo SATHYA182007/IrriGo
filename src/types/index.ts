@@ -112,5 +112,5 @@ export interface SimulationParams {
   rainProbability: number; // 0 - 100
   solarAvailability: number; // 0 - 100
   waterLevel: number; // 0 - 100
-  cropGrowthStage: 'Germination' | 'Vegetative' | 'Fruiting' | 'Harvest Ready';
+  cropGrowthStage: 'Germination' | 'Vegetative' | 'Flowering' | 'Fruiting' | 'Harvest Ready';
 }

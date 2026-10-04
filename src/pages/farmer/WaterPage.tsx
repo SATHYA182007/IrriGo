@@ -110,7 +110,7 @@ export const WaterPage: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                <span>Tomato crops in Field A are in high-transpiration Fruiting stage</span>
+                <span>Tomato crops in Field A are in active transpiration Flowering stage</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -133,6 +133,39 @@ export const WaterPage: React.FC = () => {
             </button>
           </div>
         )}
+      </GlassCard>
+
+      {/* Baseline Water Savings Comparison Panel (project_data.md Section 53 & 54) */}
+      <GlassCard className="p-6 md:p-8 space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div>
+            <h3 className="text-lg font-bold text-slate-900">Baseline Water Consumption Comparison</h3>
+            <p className="text-xs text-slate-500">Conventional fixed scheduling vs. IrriGo soil-aware drip intelligence</p>
+          </div>
+          <span className="text-[10px] font-bold px-3 py-1 bg-amber-50 text-amber-900 border border-amber-200 rounded-full">
+            Illustrative simulation — not field-validated results
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+            <span className="text-xs font-bold text-slate-500 block uppercase">Conventional Baseline</span>
+            <span className="text-2xl font-black text-slate-700">2,500 L / day</span>
+            <span className="text-[11px] text-slate-500 block">Fixed timer, no soil moisture telemetry</span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-emerald-50 border border-emerald-300 text-center space-y-1">
+            <span className="text-xs font-bold text-emerald-800 block uppercase">IrriGo Smart Irrigation</span>
+            <span className="text-2xl font-black text-emerald-700">2,050 L / day</span>
+            <span className="text-[11px] text-emerald-700 block">Soil-aware & rain-postponed schedule</span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-emerald-100/80 border border-emerald-300 text-center space-y-1">
+            <span className="text-xs font-bold text-emerald-900 block uppercase">Estimated Daily Saving</span>
+            <span className="text-2xl font-black text-emerald-800">450 L / day (18%)</span>
+            <span className="text-[11px] text-emerald-800 block">Conserves 18% farm water volume</span>
+          </div>
+        </div>
       </GlassCard>
 
       {/* Water Telemetry Grid */}
@@ -160,7 +193,7 @@ export const WaterPage: React.FC = () => {
           <div className="text-3xl font-black text-slate-900">0 L</div>
           <p className="text-xs text-slate-600">Weekly Total: 1,680 L (Optimal)</p>
           <div className="flex items-center gap-1 text-[11px] text-emerald-700 font-bold mt-2">
-            <ShieldCheck className="w-3.5 h-3.5" /> 38% Less water vs traditional schedule
+            <ShieldCheck className="w-3.5 h-3.5" /> 18% Water Savings vs Baseline
           </div>
         </GlassCard>
       </div>

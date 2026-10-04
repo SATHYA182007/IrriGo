@@ -3,23 +3,23 @@ import { Recommendation, SimulationParams } from '../types';
 export function evaluateAgriPulseRules(params: SimulationParams): Recommendation {
   const { soilMoisture, rainProbability, solarAvailability, waterLevel, cropGrowthStage } = params;
 
-  // Rule 1: High rain probability overrides irrigation needs
+  // Rule 1: High rain probability overrides irrigation needs (project_data.md Section 15 & 16)
   if (rainProbability >= 55) {
     return {
       id: `rec-${Date.now()}`,
       status: 'POSTPONED',
-      headline: 'Hold Irrigation — Rain Expected Soon',
-      description: `High rainfall probability (${rainProbability}%) detected in your area. Irrigation is postponed to save water and energy.`,
+      headline: 'Rain is Likely — Irrigation Postponed',
+      description: `High rainfall probability (${rainProbability}%) detected. Rain is likely. Postpone irrigation and recheck soil moisture after rainfall.`,
       recommendedTime: 'Postponed for 24 hours',
       durationMinutes: 0,
       estimatedWaterLiters: 0,
       energySource: 'Solar Direct',
       confidencePercent: 94,
       reasons: [
-        `High rain probability (${rainProbability}%) will naturally hydrate your crop`,
+        `High rain probability (${rainProbability}%) will naturally hydrate your farm`,
         'Soil moisture will replenish naturally without pumping costs',
-        'Preserving 420L of water tank capacity for dry spells',
-        'Eliminating pump energy usage completely today'
+        'Preserves water storage tank capacity for future dry spells',
+        'Eliminates pump energy consumption completely today'
       ]
     };
   }
@@ -52,7 +52,7 @@ export function evaluateAgriPulseRules(params: SimulationParams): Recommendation
       status: 'REQUIRED',
       headline: 'Light Irrigation Recommended — Low Tank Reserve',
       description: `Soil moisture is low (${soilMoisture}%), but water tank level is only ${waterLevel}%. Running a short 20-minute targeted irrigation cycle.`,
-      recommendedTime: '11:00 AM Today',
+      recommendedTime: '10:30 AM Tomorrow',
       durationMinutes: 20,
       estimatedWaterLiters: 240,
       energySource: solarAvailability > 60 ? 'Solar Direct' : 'Grid Backup',
@@ -66,28 +66,28 @@ export function evaluateAgriPulseRules(params: SimulationParams): Recommendation
     };
   }
 
-  // Rule 4: Irrigation Required - High Solar vs Normal Solar
+  // Rule 4: Irrigation Required - High Solar vs Normal Solar (project_data.md Section 14)
   const isHighSolar = solarAvailability >= 70;
-  const recommendedTime = isHighSolar ? '10:30 AM Tomorrow' : '07:30 AM Tomorrow';
+  const recommendedTime = '10:30 AM Tomorrow';
   const energySource = isHighSolar ? 'Solar Direct' : 'Battery Storage';
-  const duration = cropGrowthStage === 'Fruiting' ? 40 : 30;
-  const waterLiters = duration * 12; // 12L per minute
+  const duration = cropGrowthStage === 'Flowering' ? 35 : (cropGrowthStage === 'Fruiting' ? 40 : 30);
+  const waterLiters = duration * 12; // 35 min * 12L/min = 420 L
 
   return {
     id: `rec-${Date.now()}`,
     status: 'REQUIRED',
-    headline: 'Solar-Optimized Irrigation Recommended',
-    description: `Soil moisture is dry (${soilMoisture}%). Rain probability is low (${rainProbability}%). Peak solar power will power your pump for free at ${recommendedTime}.`,
+    headline: 'Irrigation Required — Solar Window Recommended',
+    description: `Your soil is getting dry (${soilMoisture}%). Rain is unlikely today (${rainProbability}%). Good solar energy (${solarAvailability}%) is available. Recommended action: Irrigate tomorrow at 10:30 AM for ${duration} minutes (${waterLiters}L).`,
     recommendedTime,
     durationMinutes: duration,
     estimatedWaterLiters: waterLiters,
     energySource,
     confidencePercent: 96,
     reasons: [
-      `Soil moisture (${soilMoisture}%) is below optimal target (45%)`,
-      `Rain probability (${rainProbability}%) is low for the next 36 hours`,
-      `Crop in ${cropGrowthStage} stage requires active transpiration moisture`,
-      `Peak solar irradiance (${solarAvailability}%) powers pump without grid or diesel costs`
+      `Soil moisture (${soilMoisture}%) is decreasing below target (45%)`,
+      `Rain is unlikely (${rainProbability}%) over the next 36 hours`,
+      `Water level (${waterLevel}%) is sufficient for full drip cycle`,
+      `Good solar energy availability (${solarAvailability}%) powers pump without grid or diesel costs`
     ]
   };
 }

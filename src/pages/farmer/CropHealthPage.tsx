@@ -60,7 +60,7 @@ export const CropHealthPage: React.FC = () => {
                         : 'bg-amber-100 text-amber-800'
                     }`}
                   >
-                    {field.healthStatus === 'healthy' ? '🟢 Healthy' : '🟡 Monitor'}
+                    {field.healthStatus === 'healthy' ? 'Healthy' : 'Monitor'}
                   </span>
                 </div>
                 <h4 className="text-base font-bold text-slate-900">{field.cropName}</h4>

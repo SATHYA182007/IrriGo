@@ -39,10 +39,10 @@ export const EnergyPage: React.FC = () => {
 
         <div className="pt-2 flex flex-wrap gap-4 text-xs font-bold text-amber-900">
           <span className="bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-            ☀️ Current Irradiance: 812 W/m² (High)
+            Current Irradiance: 812 W/m² (High)
           </span>
           <span className="bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
-            💰 Est. Daily Fuel Savings: ₹145
+            Est. Daily Fuel Savings: ₹145
           </span>
         </div>
       </GlassCard>
@@ -94,12 +94,45 @@ export const EnergyPage: React.FC = () => {
         </div>
       </GlassCard>
 
+      {/* Baseline Energy Savings Comparison Panel (project_data.md Section 54) */}
+      <GlassCard className="p-6 md:p-8 space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-2 border-b border-slate-100 pb-3">
+          <div>
+            <h3 className="text-lg font-bold text-slate-900">Baseline Energy Consumption Comparison</h3>
+            <p className="text-xs text-slate-500">Grid/diesel pump operation vs. IrriGo peak solar window scheduling</p>
+          </div>
+          <span className="text-[10px] font-bold px-3 py-1 bg-amber-50 text-amber-900 border border-amber-200 rounded-full">
+            Illustrative simulation — not field-validated results
+          </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center space-y-1">
+            <span className="text-xs font-bold text-slate-500 block uppercase">Conventional Baseline</span>
+            <span className="text-2xl font-black text-slate-700">3.00 kWh / day</span>
+            <span className="text-[11px] text-slate-500 block">Grid or diesel power pumping</span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-amber-50 border border-amber-300 text-center space-y-1">
+            <span className="text-xs font-bold text-amber-800 block uppercase">IrriGo Solar Pumping</span>
+            <span className="text-2xl font-black text-amber-700">2.58 kWh / day</span>
+            <span className="text-[11px] text-amber-700 block">10:30 AM – 12:00 PM solar window</span>
+          </div>
+
+          <div className="p-4 rounded-2xl bg-emerald-100/80 border border-emerald-300 text-center space-y-1">
+            <span className="text-xs font-bold text-emerald-900 block uppercase">Estimated Energy Saving</span>
+            <span className="text-2xl font-black text-emerald-800">0.42 kWh / day (14%)</span>
+            <span className="text-[11px] text-emerald-800 block">Reduces energy intensity by 14%</span>
+          </div>
+        </div>
+      </GlassCard>
+
       {/* Energy Metrics Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <GlassCard className="space-y-2">
           <span className="text-xs font-bold text-slate-500 uppercase">Daily Solar Harvest</span>
           <div className="text-3xl font-black text-amber-600">{energyData.dailySolarEnergyKWh} kWh</div>
-          <p className="text-xs text-slate-600">Peak window: {energyData.peakSolarWindow}</p>
+          <p className="text-xs text-slate-600">Peak window: 10:30 AM – 12:00 PM</p>
         </GlassCard>
 
         <GlassCard className="space-y-2">
@@ -110,8 +143,8 @@ export const EnergyPage: React.FC = () => {
 
         <GlassCard className="space-y-2">
           <span className="text-xs font-bold text-slate-500 uppercase">Energy Savings</span>
-          <div className="text-3xl font-black text-emerald-700">{energyData.estimatedEnergySavingsPercent}%</div>
-          <p className="text-xs text-slate-600">Compared to conventional diesel pumping</p>
+          <div className="text-3xl font-black text-emerald-700">14%</div>
+          <p className="text-xs text-slate-600">0.42 kWh/day saved vs conventional baseline</p>
         </GlassCard>
       </div>
     </div>

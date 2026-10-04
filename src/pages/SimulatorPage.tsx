@@ -73,19 +73,19 @@ export const SimulatorPage: React.FC = () => {
             onClick={() => applyPreset('drought')}
             className="px-3 py-1.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold hover:bg-amber-200 transition-colors cursor-pointer"
           >
-            ☀️ Dry Summer (High Solar + Low Moisture)
+            Dry Summer (High Solar + Low Moisture)
           </button>
           <button
             onClick={() => applyPreset('monsoon')}
             className="px-3 py-1.5 rounded-full bg-sky-100 text-sky-900 border border-sky-300 text-xs font-bold hover:bg-sky-200 transition-colors cursor-pointer"
           >
-            🌧️ Heavy Monsoon (85% Rain Forecast)
+            Heavy Monsoon (85% Rain Forecast)
           </button>
           <button
             onClick={() => applyPreset('optimal')}
             className="px-3 py-1.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300 text-xs font-bold hover:bg-emerald-200 transition-colors cursor-pointer"
           >
-            🌱 Healthy Moisture (No Action Needed)
+            Healthy Moisture (No Action Needed)
           </button>
         </div>
       </GlassCard>

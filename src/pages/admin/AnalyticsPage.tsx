@@ -7,9 +7,48 @@ export const AnalyticsPage: React.FC = () => {
   return (
     <div className="space-y-8">
       <PageHeader
-        title="Federation Analytics & Resource Reporting"
-        subtitle="Aggregate water savings, solar energy utilization, and grid cost reduction."
+        title="FPO Federation Analytics & Resource Reporting"
+        subtitle="Aggregate water savings, solar energy utilization, and climate risk mitigation across farm cluster."
+        badge="124 Farms • 318 Acres"
       />
+
+      {/* Overview Stat Cards (project_data.md Section 30 & 31) */}
+      <div className="grid grid-cols-2 lg:grid-cols-5 gap-4">
+        <GlassCard className="p-4 space-y-1">
+          <span className="text-xs font-bold text-slate-500 uppercase">Water Usage</span>
+          <div className="text-2xl font-black text-emerald-700">↓ 18%</div>
+          <span className="text-[10px] text-slate-500">450L/day avg saved</span>
+        </GlassCard>
+
+        <GlassCard className="p-4 space-y-1">
+          <span className="text-xs font-bold text-slate-500 uppercase">Energy Usage</span>
+          <div className="text-2xl font-black text-emerald-700">↓ 14%</div>
+          <span className="text-[10px] text-slate-500">0.42kWh/day avg saved</span>
+        </GlassCard>
+
+        <GlassCard className="p-4 space-y-1">
+          <span className="text-xs font-bold text-slate-500 uppercase">Solar Utilization</span>
+          <div className="text-2xl font-black text-amber-600">↑ 27%</div>
+          <span className="text-[10px] text-slate-500">Solar window alignment</span>
+        </GlassCard>
+
+        <GlassCard className="p-4 space-y-1">
+          <span className="text-xs font-bold text-slate-500 uppercase">Healthy Farms</span>
+          <div className="text-2xl font-black text-emerald-700">91%</div>
+          <span className="text-[10px] text-slate-500">113 of 124 farms optimal</span>
+        </GlassCard>
+
+        <GlassCard className="p-4 space-y-1 col-span-2 lg:col-span-1">
+          <span className="text-xs font-bold text-slate-500 uppercase">Post-Harvest Loss</span>
+          <div className="text-2xl font-black text-emerald-700">↓ 12%</div>
+          <span className="text-[10px] text-slate-500">AgriVault storage tracking</span>
+        </GlassCard>
+      </div>
+
+      {/* Mandatory Disclaimer Badge (project_data.md Section 31 & 52) */}
+      <div className="p-3 bg-amber-50 border border-amber-200 rounded-xl text-center text-xs font-bold text-amber-900">
+        Illustrative simulation — not field-validated results
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Minimal Water Consumption Chart */}
@@ -19,7 +58,7 @@ export const AnalyticsPage: React.FC = () => {
               <Droplets className="w-4 h-4 text-sky-600" />
               <span>Water Consumption Trend (kL)</span>
             </h3>
-            <span className="text-xs font-bold text-emerald-700">-40% vs Baseline</span>
+            <span className="text-xs font-bold text-emerald-700">-18% vs Baseline</span>
           </div>
 
           <div className="h-44 flex items-end gap-3 pt-6 pb-2 px-2 border-b border-slate-200">
@@ -42,7 +81,7 @@ export const AnalyticsPage: React.FC = () => {
               <Sun className="w-4 h-4 text-amber-500" />
               <span>Solar Energy Utilization (%)</span>
             </h3>
-            <span className="text-xs font-bold text-amber-700">84.2% Peak Solar</span>
+            <span className="text-xs font-bold text-amber-700">+27% Solar Window Sync</span>
           </div>
 
           <div className="h-44 flex items-end gap-3 pt-6 pb-2 px-2 border-b border-slate-200">

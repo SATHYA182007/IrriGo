@@ -43,15 +43,15 @@ export const AssistantPage: React.FC = () => {
 
     const lower = q.toLowerCase();
     if (lower.includes('water') || lower.includes('irrigate')) {
-      botReply = `💧 ${recommendation.headline}. Recommended duration: ${recommendation.durationMinutes} mins at ${recommendation.recommendedTime} using ${recommendation.energySource}.`;
+      botReply = `Yes, Ravi. Your soil is getting dry, but rain is unlikely today. Good solar energy is available. Recommended action: Irrigate tomorrow at 10:30 AM for 35 minutes (420L).`;
     } else if (lower.includes('rain') || lower.includes('weather')) {
-      botReply = `🌦️ Current temperature is ${weatherData.temp}°C with ${weatherData.rainProbability}% chance of rain. Rain is expected on Thursday (75%).`;
+      botReply = `Current temperature is ${weatherData.temp}°C with ${weatherData.rainProbability}% chance of rain today. Heavy rain is expected on Wednesday and Thursday (70-80%).`;
     } else if (lower.includes('healthy') || lower.includes('crop')) {
-      botReply = `🌱 Your Field A (Tomato) and Field B (Chilli) crops are healthy with current soil moisture at ${sensorData.soilMoisture}%.`;
+      botReply = `Your Field A (Tomato) and Field B (Chilli) crops are healthy with current soil moisture at ${sensorData.soilMoisture}%. Health score is 87% in Flowering stage.`;
     } else if (lower.includes('harvest')) {
-      botReply = `📦 Field A Tomatoes are 85% ready for harvest in 3-5 days. Market dispatch priority is High.`;
+      botReply = `Harvest Field A Tomatoes within 3–5 days. Prioritize dispatch to the nearest buyer because shelf life is decreasing.`;
     } else {
-      botReply = `🤖 AgriPulse status: Soil moisture is ${sensorData.soilMoisture}%, solar irradiance is ${sensorData.solarIrradiance} W/m², and water tank level is ${sensorData.waterTankLevel}%.`;
+      botReply = `AgriPulse status: Soil moisture is ${sensorData.soilMoisture}%, solar irradiance is ${sensorData.solarIrradiance} W/m², and water tank level is ${sensorData.waterTankLevel}%.`;
     }
 
     setChatHistory(prev => [...prev, userMsg, { sender: 'bot', text: botReply }]);
@@ -82,7 +82,7 @@ export const AssistantPage: React.FC = () => {
             onClick={() => handleSend(q)}
             className="px-3.5 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-semibold transition-all cursor-pointer shadow-2xs"
           >
-            💬 {q}
+            {q}
           </button>
         ))}
       </div>
