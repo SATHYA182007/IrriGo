@@ -47,22 +47,40 @@ export const AuthPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center py-10 px-4 sm:px-6 lg:px-8 bg-[#FAFFFC]">
-      {/* Back to Home Header Link */}
-      <div className="max-w-4xl w-full mb-4 flex items-center justify-between">
+    <div className="min-h-screen flex flex-col justify-center items-center py-4 sm:py-8 px-3 sm:px-6 lg:px-8 bg-[#FAFFFC]">
+      {/* Top Back Navigation Link */}
+      <div className="max-w-4xl w-full mb-3 flex items-center justify-between">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 text-xs font-bold text-slate-600 hover:text-emerald-700 transition-colors bg-white/80 px-3.5 py-1.5 rounded-full border border-emerald-100 shadow-2xs"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-600 hover:text-emerald-700 transition-colors bg-white/90 px-3 py-1.5 rounded-full border border-emerald-100 shadow-2xs"
         >
-          <ArrowLeft className="w-3.5 h-3.5" />
+          <ArrowLeft className="w-3.5 h-3.5 text-emerald-600" />
           <span>Back to Landing Page</span>
         </Link>
       </div>
 
-      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 bg-white rounded-3xl shadow-2xl overflow-hidden border border-emerald-100">
-        {/* Left Side Green Panel */}
-        <div className="md:col-span-5 bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 p-8 text-white flex flex-col justify-between relative overflow-hidden">
-          <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-emerald-500/20 rounded-full blur-2xl" />
+      {/* Main Authentication Card */}
+      <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-12 bg-white rounded-2xl sm:rounded-3xl shadow-xl overflow-hidden border border-emerald-100">
+        
+        {/* MOBILE COMPACT HEADER (Visible on Mobile Only) */}
+        <div className="block md:hidden bg-gradient-to-r from-emerald-900 via-emerald-800 to-teal-900 p-4 text-white">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-lg bg-emerald-400 text-slate-950 flex items-center justify-center font-extrabold">
+                <Sprout className="w-4 h-4 fill-slate-950" />
+              </div>
+              <span className="font-extrabold text-base tracking-tight text-white">IrriGo AI</span>
+            </Link>
+
+            <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-200 bg-white/10 px-2.5 py-0.5 rounded-full border border-white/20">
+              {isSignUp ? "Sign Up" : "Sign In"}
+            </span>
+          </div>
+        </div>
+
+        {/* DESKTOP FULL FEATURE SIDEBAR (Visible on Desktop Only) */}
+        <div className="hidden md:flex md:col-span-5 bg-gradient-to-br from-emerald-900 via-emerald-800 to-teal-900 p-8 text-white flex-col justify-between relative overflow-hidden">
+          <div className="absolute -right-10 -bottom-10 w-48 h-48 bg-emerald-500/20 rounded-full blur-2xl pointer-events-none" />
 
           <div>
             <Link to="/" className="flex items-center gap-2.5 mb-8">
@@ -72,12 +90,12 @@ export const AuthPage: React.FC = () => {
               <span className="font-extrabold text-xl tracking-tight text-white">IrriGo AI</span>
             </Link>
 
-            <h2 className="text-2xl font-extrabold text-white mb-3">
+            <h2 className="text-2xl font-extrabold text-white mb-3 leading-tight">
               {isSignUp ? "Join the Smart Agriculture Network" : "Sign In to Access Farm Intelligence"}
             </h2>
 
             <p className="text-xs text-emerald-100 leading-relaxed mb-6">
-              “Smarter Farming. Less Water. Cleaner Energy.”
+              Smarter Farming. Less Water. Cleaner Energy.
             </p>
 
             <div className="space-y-3 pt-4 border-t border-emerald-700/60">
@@ -101,55 +119,55 @@ export const AuthPage: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Side Form */}
-        <div className="md:col-span-7 p-8 md:p-10 flex flex-col justify-center">
-          <div className="mb-6">
-            <h3 className="text-2xl font-extrabold text-slate-900">
+        {/* RIGHT SIDE FORM (Mobile & Desktop) */}
+        <div className="md:col-span-7 p-4 sm:p-8 md:p-10 flex flex-col justify-center">
+          <div className="mb-4 sm:mb-6">
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900">
               {isForgotPassword
                 ? "Reset Your Password"
                 : isSignUp
                 ? "Create Account"
                 : "Sign In"}
             </h3>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-slate-500 mt-0.5">
               Select user portal type and enter your account credentials
             </p>
           </div>
 
-          {/* Quick Demo Sign In Options for Hackathon Judges right inside the login screen */}
+          {/* Quick Instant Demo Sign In Options */}
           {!isForgotPassword && (
-            <div className="mb-6 space-y-2">
-              <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
+            <div className="mb-4 space-y-2">
+              <span className="text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider text-slate-500 block">
                 Instant Hackathon Login Options:
               </span>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-2">
                 <button
                   onClick={() => handleDemoSignIn('farmer')}
                   type="button"
-                  className="py-2.5 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-900 text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+                  className="py-2.5 px-2.5 sm:px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-900 text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-2xs"
                 >
-                  <UserCheck className="w-4 h-4 text-emerald-600" />
-                  <span>Sign In as Farmer</span>
+                  <UserCheck className="w-3.5 h-3.5 text-emerald-700 shrink-0" />
+                  <span className="truncate">Sign In as Farmer</span>
                 </button>
                 <button
                   onClick={() => handleDemoSignIn('admin')}
                   type="button"
-                  className="py-2.5 px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-2xs"
+                  className="py-2.5 px-2.5 sm:px-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white border border-slate-700 text-xs font-bold flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-2xs"
                 >
-                  <Building2 className="w-4 h-4 text-emerald-400" />
-                  <span>Sign In as FPO Admin</span>
+                  <Building2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                  <span className="truncate">Sign In as FPO Admin</span>
                 </button>
               </div>
             </div>
           )}
 
-          <div className="relative flex py-2 items-center mb-4">
+          <div className="relative flex py-1.5 items-center mb-3">
             <div className="flex-grow border-t border-slate-200"></div>
-            <span className="flex-shrink mx-3 text-slate-400 text-[11px] font-bold uppercase">Or enter credentials</span>
+            <span className="flex-shrink mx-2 text-slate-400 text-[10px] sm:text-[11px] font-extrabold uppercase tracking-wider">Or enter credentials</span>
             <div className="flex-grow border-t border-slate-200"></div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
             {isSignUp && (
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">Full Name</label>
@@ -161,7 +179,7 @@ export const AuthPage: React.FC = () => {
                     value={fullName}
                     onChange={e => setFullName(e.target.value)}
                     placeholder="e.g. Ravi Kumar"
-                    className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 focus:outline-emerald-600 focus:ring-1 focus:ring-emerald-600"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 focus:outline-emerald-600 focus:ring-1 focus:ring-emerald-600 bg-white"
                   />
                 </div>
               </div>
@@ -178,20 +196,20 @@ export const AuthPage: React.FC = () => {
                     value={emailOrPhone}
                     onChange={e => setEmailOrPhone(e.target.value)}
                     placeholder="+91 98765 43210 or email"
-                    className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 focus:outline-emerald-600 focus:ring-1 focus:ring-emerald-600"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 focus:outline-emerald-600 focus:ring-1 focus:ring-emerald-600 bg-white"
                   />
                 </div>
               </div>
             )}
 
             {!isForgotPassword && (
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 mb-1">Target Portal</label>
                   <select
                     value={userRole}
                     onChange={e => setUserRole(e.target.value as 'farmer' | 'admin')}
-                    className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 bg-white font-semibold"
+                    className="w-full px-2.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 bg-white font-semibold truncate"
                   >
                     <option value="farmer">Farmer Dashboard</option>
                     <option value="admin">FPO Admin Portal</option>
@@ -203,7 +221,7 @@ export const AuthPage: React.FC = () => {
                   <select
                     value={language}
                     onChange={e => setLanguage(e.target.value as any)}
-                    className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 bg-white"
+                    className="w-full px-2.5 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 bg-white truncate"
                   >
                     <option value="en">English</option>
                     <option value="ta">தமிழ் (Tamil)</option>
@@ -214,32 +232,32 @@ export const AuthPage: React.FC = () => {
             )}
 
             {isSignUp && (
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-3 gap-2">
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Location</label>
+                  <label className="block text-[11px] font-bold text-slate-700 mb-1">Location</label>
                   <input
                     type="text"
                     value={locationState}
                     onChange={e => setLocationState(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-800"
+                    className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs text-slate-800"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Farm Size</label>
+                  <label className="block text-[11px] font-bold text-slate-700 mb-1">Farm Size</label>
                   <input
                     type="text"
                     value={farmSize}
                     onChange={e => setFarmSize(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-800"
+                    className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs text-slate-800"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-slate-700 mb-1">Primary Crop</label>
+                  <label className="block text-[11px] font-bold text-slate-700 mb-1">Crop</label>
                   <input
                     type="text"
                     value={primaryCrop}
                     onChange={e => setPrimaryCrop(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs text-slate-800"
+                    className="w-full px-2.5 py-2 rounded-xl border border-slate-200 text-xs text-slate-800"
                   />
                 </div>
               </div>
@@ -263,7 +281,7 @@ export const AuthPage: React.FC = () => {
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full pl-9 pr-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 focus:outline-emerald-600 focus:ring-1 focus:ring-emerald-600"
+                    className="w-full pl-9 pr-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800 focus:outline-emerald-600 focus:ring-1 focus:ring-emerald-600 bg-white"
                   />
                 </div>
               </div>
@@ -275,14 +293,14 @@ export const AuthPage: React.FC = () => {
                 <input
                   type="text"
                   placeholder="+91 98765 43210"
-                  className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800"
+                  className="w-full px-3 py-2.5 rounded-xl border border-slate-200 text-xs text-slate-800"
                 />
               </div>
             )}
 
             <button
               type="submit"
-              className="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-bold text-xs shadow-md transition-all cursor-pointer mt-2"
+              className="w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-xl font-bold text-xs shadow-md transition-all cursor-pointer mt-2 active:scale-98"
             >
               {isForgotPassword
                 ? "Send Reset OTP"
@@ -292,7 +310,7 @@ export const AuthPage: React.FC = () => {
             </button>
           </form>
 
-          <div className="mt-6 pt-4 border-t border-slate-100 text-center text-xs text-slate-500">
+          <div className="mt-4 pt-3 border-t border-slate-100 text-center text-xs text-slate-500">
             {isSignUp ? (
               <p>
                 Already have an account?{" "}
@@ -314,3 +332,4 @@ export const AuthPage: React.FC = () => {
     </div>
   );
 };
+
